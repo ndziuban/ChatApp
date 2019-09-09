@@ -7,22 +7,28 @@ class ChatWindow extends React.PureComponent {
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
-  onSubmit(msg) {
-    this.props.onSubmit(this.props.id, msg)
+  onSubmit(message) {
+    this.props.onSubmit(this.props.sender, message)
+  }
+
+  onChange() {
+    this.props.onSenderTyping(this.props.sender)
   }
 
   render() {
+    const { sender, receiver, messages, receiverIsTyping } = this.props;
+
     return (
       <div>
-        {this.props.id} - Messages:
+        {sender} - Messages:
         <div>
-          {
-            this.props.messages.map(msg => <p>{msg.sender_id} says: {msg.text}</p>)
-          }
+          { messages.map(msg => <p>{msg.sender_id} says: {msg.text}</p>) }
         </div>
-        <InputArea onSubmit={this.onSubmit}/>
+        { receiverIsTyping && <div><p>{receiver} is typing...</p></div> }
+        <InputArea onChange={this.onChange} onSubmit={this.onSubmit} />
       </div>
     );
   }
@@ -30,8 +36,11 @@ class ChatWindow extends React.PureComponent {
 
 ChatWindow.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  onSenderTyping: PropTypes.func.isRequired,
   messages: PropTypes.arrayOf(PropTypes.string),
-  id: PropTypes.string.isRequired,
+  sender: PropTypes.string.isRequired,
+  receiver: PropTypes.string.isRequired,
+  receiverIsTyping: PropTypes.bool,
 };
 
 export default ChatWindow;

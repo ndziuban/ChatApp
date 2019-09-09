@@ -11,6 +11,7 @@ class Input extends React.PureComponent {
 
   handleChange(e) {
     this.setState({ value: e.target.value });
+    this.props.onChange();
   }
 
   handleSubmit(e) {
@@ -33,6 +34,7 @@ class Input extends React.PureComponent {
 
 Input.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Input;
