@@ -3,3 +3,16 @@ body {
   Helvetica, Roboto, Arial, sans-serif;
   color: brown;
 }
+
+.app__container {
+  display: flex;
+  justify-content: space-between;
+  height: 720px;
+
+  .app__divisor {
+    width: 10px;
+    background: black;
+    margin: 0 10px;
+    height: 100%;
+  }
+}

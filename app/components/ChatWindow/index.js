@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import InputArea from '../InputArea';
+import Message from '../Message';
+
+import './styles.scss';
 
 class ChatWindow extends React.PureComponent {
   constructor(props) {
@@ -22,12 +24,12 @@ class ChatWindow extends React.PureComponent {
     const { sender, receiver, messages, receiverIsTyping } = this.props;
 
     return (
-      <div>
+      <div className="chat-window">
         {sender} - Messages:
-        <div>
-          { messages.map(msg => <p>{msg.sender_id} says: {msg.text}</p>) }
+        <div className="chat-window__message-container">
+          { messages.map(msg => <Message text={msg.text} isOwnMessage={msg.sender_id === sender} />) }
+          { receiverIsTyping && <Message text={`${receiver} is typing...`} isOwnMessage={false} isTypingMessage /> }
         </div>
-        { receiverIsTyping && <div><p>{receiver} is typing...</p></div> }
         <InputArea onChange={this.onChange} onSubmit={this.onSubmit} />
       </div>
     );

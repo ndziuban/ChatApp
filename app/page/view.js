@@ -55,7 +55,7 @@ class Main extends React.PureComponent {
 
   render() {
     return (
-      <div>
+      <div className="app__container">
         <ChatWindow
           sender="Laura"
           receiver="Rob"
@@ -64,6 +64,7 @@ class Main extends React.PureComponent {
           onSubmit={this.onSubmit}
           onSenderTyping={this.onSenderTyping}
         />
+        <div className="app__divisor" />
         <ChatWindow
           sender="Rob"
           receiver="Laura"
