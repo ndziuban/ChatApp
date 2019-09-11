@@ -38,7 +38,7 @@ class ChatWindow extends React.PureComponent {
         </div>
         <div className="overflow-content">
           <div className="chat-window__message-container">
-            { messages.map(msg => <Message text={msg.text} isOwnMessage={msg.sender_id === sender} />) }
+            { messages.map((msg, idx) => <Message key={idx} text={msg.text} isOwnMessage={msg.sender_id === sender} />) }
             { receiverIsTyping && <Message text={`${receiver} is typing...`} isOwnMessage={false} isTypingMessage /> }
             <div ref={this.messageEnd} />
           </div>
@@ -52,7 +52,7 @@ class ChatWindow extends React.PureComponent {
 ChatWindow.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onSenderTyping: PropTypes.func.isRequired,
-  messages: PropTypes.arrayOf(PropTypes.string),
+  messages: PropTypes.arrayOf(PropTypes.instanceOf(Object)),
   sender: PropTypes.string.isRequired,
   receiver: PropTypes.string.isRequired,
   receiverIsTyping: PropTypes.bool,

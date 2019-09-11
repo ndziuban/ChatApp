@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatWindow (Not typing - Empty) renders correctly 1`] = `
+<div
+  className="chat-window"
+>
+  <div
+    className="chat-window__header"
+  >
+    <div
+      className="header-content"
+    >
+      <span>
+        PERSON_1
+      </span>
+      <span
+        className="header-content__subtext"
+      >
+        Active
+      </span>
+    </div>
+  </div>
+  <div
+    className="overflow-content"
+  >
+    <div
+      className="chat-window__message-container"
+    >
+      <div />
+    </div>
+  </div>
+  <div
+    className="input__container"
+  >
+    <textarea
+      className="input"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Type here to send a message..."
+      rows="2"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`ChatWindow (Not typing - Not Empty) renders correctly 1`] = `
+<div
+  className="chat-window"
+>
+  <div
+    className="chat-window__header"
+  >
+    <div
+      className="header-content"
+    >
+      <span>
+        PERSON_1
+      </span>
+      <span
+        className="header-content__subtext"
+      >
+        Active
+      </span>
+    </div>
+  </div>
+  <div
+    className="overflow-content"
+  >
+    <div
+      className="chat-window__message-container"
+    >
+      <div
+        className="message  sender"
+      >
+        <span>
+          Test
+        </span>
+      </div>
+      <div />
+    </div>
+  </div>
+  <div
+    className="input__container"
+  >
+    <textarea
+      className="input"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Type here to send a message..."
+      rows="2"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`ChatWindow (Typing - Empty) renders correctly 1`] = `
+<div
+  className="chat-window"
+>
+  <div
+    className="chat-window__header"
+  >
+    <div
+      className="header-content"
+    >
+      <span>
+        PERSON_1
+      </span>
+      <span
+        className="header-content__subtext"
+      >
+        Active
+      </span>
+    </div>
+  </div>
+  <div
+    className="overflow-content"
+  >
+    <div
+      className="chat-window__message-container"
+    >
+      <div
+        className="message typing "
+      >
+        <span>
+          PERSON_2 is typing...
+        </span>
+      </div>
+      <div />
+    </div>
+  </div>
+  <div
+    className="input__container"
+  >
+    <textarea
+      className="input"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Type here to send a message..."
+      rows="2"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`ChatWindow (Typing - Not Empty) renders correctly 1`] = `
+<div
+  className="chat-window"
+>
+  <div
+    className="chat-window__header"
+  >
+    <div
+      className="header-content"
+    >
+      <span>
+        PERSON_1
+      </span>
+      <span
+        className="header-content__subtext"
+      >
+        Active
+      </span>
+    </div>
+  </div>
+  <div
+    className="overflow-content"
+  >
+    <div
+      className="chat-window__message-container"
+    >
+      <div
+        className="message  sender"
+      >
+        <span>
+          Test
+        </span>
+      </div>
+      <div
+        className="message typing "
+      >
+        <span>
+          PERSON_2 is typing...
+        </span>
+      </div>
+      <div />
+    </div>
+  </div>
+  <div
+    className="input__container"
+  >
+    <textarea
+      className="input"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Type here to send a message..."
+      rows="2"
+      value=""
+    />
+  </div>
+</div>
+`;

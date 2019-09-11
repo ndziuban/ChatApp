@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message (sender is typing) renders correctly 1`] = `
+<div
+  className="message typing "
+>
+  <span>
+    Sender is typing...
+  </span>
+</div>
+`;
+
+exports[`Message (standard - receiver) renders correctly 1`] = `
+<div
+  className="message  "
+>
+  <span>
+    Test Message
+  </span>
+</div>
+`;
+
+exports[`Message (standard - sender) renders correctly 1`] = `
+<div
+  className="message  sender"
+>
+  <span>
+    Test Message
+  </span>
+</div>
+`;
