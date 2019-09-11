@@ -31,7 +31,10 @@ class ChatWindow extends React.PureComponent {
     return (
       <div className="chat-window">
         <div className="chat-window__header">
-          <span>{sender} - Messages:</span>
+          <div className="header-content">
+            <span>{sender}</span>
+            <span className="header-content__subtext">Active</span>
+          </div>
         </div>
         <div className="overflow-content">
           <div className="chat-window__message-container">

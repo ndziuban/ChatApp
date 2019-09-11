@@ -34,7 +34,7 @@ class Input extends React.PureComponent {
 
   render() {
     return (
-      <div>
+      <div className="input__container">
         <textarea
           rows="2"
           className="input"

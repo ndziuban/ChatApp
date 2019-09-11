@@ -13,6 +13,9 @@ class Main extends React.PureComponent {
       typing: {},
     };
 
+    this.PERSON_1 = "Laura";
+    this.PERSON_2 = "Rob";
+
     this.onSubmit = this.onSubmit.bind(this);
     this.onSenderTyping = this.onSenderTyping.bind(this);
   }
@@ -57,18 +60,18 @@ class Main extends React.PureComponent {
     return (
       <div className="app__container">
         <ChatWindow
-          sender="Laura"
-          receiver="Rob"
-          receiverIsTyping={!!this.state.typing["Rob"]}
+          sender={this.PERSON_1}
+          receiver={this.PERSON_2}
+          receiverIsTyping={!!this.state.typing[this.PERSON_2]}
           messages={this.state.messages}
           onSubmit={this.onSubmit}
           onSenderTyping={this.onSenderTyping}
         />
         <div className="app__divisor" />
         <ChatWindow
-          sender="Rob"
-          receiver="Laura"
-          receiverIsTyping={!!this.state.typing["Laura"]}
+          sender={this.PERSON_2}
+          receiver={this.PERSON_1}
+          receiverIsTyping={!!this.state.typing[this.PERSON_1]}
           messages={this.state.messages}
           onSubmit={this.onSubmit}
           onSenderTyping={this.onSenderTyping}
