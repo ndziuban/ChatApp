@@ -4,24 +4,24 @@
   justify-content: flex-start;
   padding: 5px 10px;
   border-radius: 20px;
-  color: black;
+  color: $black;
   align-self: flex-start;
-  border: 1px solid #f1f0f0;
-  background: #f1f0f0;
+  border: 1px solid $gray-c;
+  background: $gray-c;
   margin: 2px 0;
   word-break: break-word;
 
   &.sender {
-    border: 1px solid #3578e5;
-    color: white;
-    background: #3578e5;
+    border: 1px solid $blue;
+    color: $white;
+    background: $blue;
     justify-content: flex-end;
     align-self: flex-end;
   }
 
   &.typing {
     font-style: italic;
-    color: #999;
+    color: $gray-a;
     border: none;
     background: none;
   }
