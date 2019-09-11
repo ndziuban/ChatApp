@@ -10,10 +10,15 @@ class ChatWindow extends React.PureComponent {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.messageEnd = React.createRef();
+  }
+
+  componentDidUpdate() {
+    this.messageEnd.current.scrollIntoView(false);
   }
 
   onSubmit(message) {
-    this.props.onSubmit(this.props.sender, message)
+    this.props.onSubmit(this.props.sender, message);
   }
 
   onChange() {
@@ -25,10 +30,15 @@ class ChatWindow extends React.PureComponent {
 
     return (
       <div className="chat-window">
-        {sender} - Messages:
-        <div className="chat-window__message-container">
-          { messages.map(msg => <Message text={msg.text} isOwnMessage={msg.sender_id === sender} />) }
-          { receiverIsTyping && <Message text={`${receiver} is typing...`} isOwnMessage={false} isTypingMessage /> }
+        <div className="chat-window__header">
+          <span>{sender} - Messages:</span>
+        </div>
+        <div className="overflow-content">
+          <div className="chat-window__message-container">
+            { messages.map(msg => <Message text={msg.text} isOwnMessage={msg.sender_id === sender} />) }
+            { receiverIsTyping && <Message text={`${receiver} is typing...`} isOwnMessage={false} isTypingMessage /> }
+            <div ref={this.messageEnd} />
+          </div>
         </div>
         <InputArea onChange={this.onChange} onSubmit={this.onSubmit} />
       </div>
